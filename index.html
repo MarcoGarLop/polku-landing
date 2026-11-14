@@ -71,8 +71,8 @@
         <div class="col par" style="--depth:.8">
           <p class="kicker">Every county, simulated</p>
           <h2 class="display">Where you live<br /><em>changes the wait.</em></h2>
-          <p class="lede">For the average patient, from <b class="green">135 days</b> in Päijät-Häme to <b class="rose">176</b> in North Karelia.</p>
-          <p class="lede frag" data-step="1">But the widest gap is between <em>people</em>: up to <b>41 days</b> between counties, <b class="rose">131 days</b> between Patient A and Patient B.</p>
+          <p class="lede">From <b class="green">135 days</b> in Päijät-Häme to <b class="rose">176</b> in North Karelia, for the average patient.</p>
+          <p class="lede frag" data-step="1">But people differ more than places: <b>41 days</b> between counties, <b class="rose">131 days</b> between Patient A and Patient B.</p>
           <div class="legend"><span>135</span><i></i><span>176 days</span></div>
           <p class="src">Polku model estimate · Statistics Finland 2026 boundaries</p>
         </div>
@@ -84,7 +84,8 @@
     <section class="scene s-where" data-bg="s4-clinic" data-steps="2" data-region="lappi" data-place="patientB" data-where="A village health centre · Lapland" data-fi="terveyskeskus" data-en="health centre">
       <div class="inner left">
         <p class="kicker par" style="--depth:.6"><span class="n">1</span> Where the days are lost</p>
-        <h2 class="display par"><b class="rose">64%</b> of Patient B's extra days<br /><em>are lost before a specialist ever sees them.</em></h2>
+        <h2 class="display par"><b class="rose">64%</b> of the extra wait<br /><em>happens before a specialist.</em></h2>
+        <p class="sub par" style="--depth:.9">Patient B's extra days, compared with Finland's average patient.</p>
         <div class="stretch par" style="--depth:.85">
           <div class="srow"><span class="who">Patient B</span>
             <div class="segs"><i class="d" style="--v:96.4">96</i><i class="r" style="--v:45.2">45</i><i class="h" style="--v:83.9">84</i></div></div>
@@ -119,7 +120,7 @@
       <div class="inner split how">
         <div class="col par" style="--depth:.8">
           <p class="kicker">How Polku works</p>
-          <h2 class="display sm">A digital twin of the pathway,<br /><em>for the people who plan care.</em></h2>
+          <h2 class="display sm">A digital twin<br /><em>of the care pathway.</em></h2>
           <ol class="steps">
             <li data-on="0"><b>The patient</b><span>Where they live, how far from hospital, how they enter care, education, support. Every choice re-runs the simulation.</span></li>
             <li data-on="1"><b>Actions in the region</b><span>The AI estimated every action in Finland's national cancer roadmap from the evidence, and recommends the best mix.</span></li>
@@ -159,18 +160,45 @@
         <p class="giant par" style="--depth:1.15"><b data-track="225,187,178,169">225</b><span>days</span></p>
         <div class="meter par" style="--depth:.9"><i data-trackw="225,187,178,169"></i><em style="--v:94" title="Patient A"></em></div>
         <ul class="ladder par" style="--depth:.8">
-          <li class="frag" data-step="1"><b class="green">−39</b><span><b>The AI's recommendation for Lapland</b> · nurse navigator, symptom-awareness campaign, travel support (national roadmap 1.2, 1.3, 3.3)</span></li>
+          <li class="frag" data-step="1"><b class="green">−39</b><span><b>The AI's recommendation for Lapland</b> · nurse navigator, awareness campaign, travel support</span></li>
           <li class="frag" data-step="2"><b class="green">−48</b><span><b>+ a planner's own idea</b> · volunteer drivers and a named contact person</span></li>
-          <li class="frag" data-step="3"><b class="green">169</b><span><b>+ Norway's standardised cancer pathways</b> · almost two months sooner. The gap to Patient A shrinks from 131 to 82 days.</span></li>
+          <li class="frag" data-step="3"><b class="green">−57</b><span><b>+ Norway's standardised cancer pathways</b> · almost two months sooner. The gap to Patient A: 131 → 82 days.</span></li>
         </ul>
       </div>
     </section>
 
-    <!-- 10 · TRUST ----------------------------------------------------------- -->
+    <!-- 10 · REGION PLAN ----------------------------------------------------- -->
+    <section class="scene s-plan" data-bg="s7-dawn" data-steps="2" data-region="lappi" data-place="" data-where="Sunrise over a fell · Lapland" data-fi="toimintasuunnitelma" data-en="action plan">
+      <div class="inner split plan">
+        <div class="col par" style="--depth:.8">
+          <p class="kicker"><span class="n">3</span> What to do</p>
+          <h2 class="display">A one-page plan<br /><em>for Lapland.</em></h2>
+          <p class="lede">Three actions from Finland's national cancer roadmap, with a timeline and the expected effect. Ready for the county to act on.</p>
+          <p class="lede frag" data-step="1">Downloadable in English and Finnish. Next: a 3-month pilot with one county, calibrated with real data via Findata.</p>
+        </div>
+        <article class="doc par" style="--depth:.55">
+          <header><span>Polku · One-page action plan</span><b>Lapland</b></header>
+          <div class="kpis">
+            <div><p><s>165</s><b>155</b></p><small>days, average patient</small></div>
+            <div><p><s>142</s><b>104</b></p><small>days between the best- and worst-off patient</small></div>
+            <div><p><s>21%</s><b>29%</b></p><small>treated ≤ 42 days after referral</small></div>
+          </div>
+          <div class="zero frag" data-step="0" data-seq="0,4"><b>Step 0 · Start measuring.</b> Record symptom, referral and treatment-start dates. <i>Roadmap 3.1.4 · p.58</i></div>
+          <ol class="acts">
+            <li class="frag" data-step="0" data-seq="1,4"><span class="when">30 days</span><div><b>Nurse navigator</b><i>Roadmap 1.2 · p.30</i></div><em>−16 d</em></li>
+            <li class="frag" data-step="0" data-seq="2,4"><span class="when">60 days</span><div><b>Symptom-awareness campaign</b><i>Roadmap 1.3 · p.33</i></div><em>−15 d</em></li>
+            <li class="frag" data-step="0" data-seq="3,4"><span class="when">90 days</span><div><b>Travel coordination and cost cover</b><i>Roadmap 3.3 · p.63</i></div><em>−9 d</em></li>
+          </ol>
+          <footer>Days saved for Patient B, each action on its own · estimates with evidence ranges, low confidence · Polku simulation</footer>
+        </article>
+      </div>
+    </section>
+
+    <!-- 11 · TRUST ----------------------------------------------------------- -->
     <section class="scene s-trust" data-bg="s3-kvarken" data-steps="1" data-region="" data-place="" data-where="Sea ice · Kvarken" data-fi="läpinäkyvyys" data-en="transparency">
       <div class="inner left">
         <p class="kicker par" style="--depth:.6">Data &amp; transparency</p>
-        <h2 class="display par">Every number has<br /><em>a source and a confidence level.</em></h2>
+        <h2 class="display par">Every number<br /><em>has a source.</em></h2>
         <ul class="trust par" style="--depth:.8">
           <li><b>Waiting times</b><span>Kuittinen et al., preliminary (Yle MOT 2025): Finland 154 · Sweden 107 · Denmark 67 days</span></li>
           <li><b>Entry route</b><span>AstraZeneca pathway data (lymphoma, Finland): 123 days via work health care vs 207 via the public route</span></li>
@@ -181,12 +209,12 @@
       </div>
     </section>
 
-    <!-- 11 · CLOSE ----------------------------------------------------------- -->
+    <!-- 12 · CLOSE ----------------------------------------------------------- -->
     <section class="scene s-close" data-bg="s0-hero" data-steps="1" data-region="lappi" data-place="patientB" data-where="Lapland · polar night" data-fi="sama mahdollisuus" data-en="the same chance">
       <div class="inner">
         <h2 class="display xl par" style="--depth:1.2">Same cancer.<br /><em>Same chance.</em></h2>
         <p class="lede par" style="--depth:.85"><b>Polku</b> finds the gap, locates it in the pathway, and recommends what to do, in every wellbeing county of Finland.</p>
-        <p class="cta par" style="--depth:.7"><a href="http://localhost:5173" target="_blank" rel="noopener">Open the live demo →</a></p>
+        <p class="cta par" style="--depth:.7"><a href="https://web-gamma-beryl-747wo4r3t4.vercel.app" target="_blank" rel="noopener">Try Polku live →</a></p>
         <p class="team par" style="--depth:.6"><span>Team</span> FdiProtocol <span>· Junction 2026 · Built with Gemini</span></p>
       </div>
     </section>

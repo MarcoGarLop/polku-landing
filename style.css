@@ -242,3 +242,28 @@ body.cursorless { cursor: none; }
 #locator path.hi { fill: rgba(238, 244, 250, .85); stroke: var(--snow); }
 #locator circle { r: 34; }.team { margin-top: 2.6em; font-family: var(--mono); font-size: .8em; letter-spacing: .14em; text-transform: uppercase; color: var(--snow); }
 .team span { color: var(--faint); }
+
+/* where: one-line explanation under the headline */
+.sub { margin-top: 1.1em; font-size: 1.1em; color: var(--mute); }
+
+/* region plan: a glass "document" */
+.inner.split.plan .col { flex: 0 0 40%; }
+.doc { flex: 1 1 56%; max-width: 760px; padding: 1.8em 2em 1.4em; border-radius: 18px; background: rgba(6, 10, 20, .62); backdrop-filter: blur(18px) saturate(1.2); border: 1px solid rgba(238, 244, 250, .16); box-shadow: 0 40px 80px rgba(0, 0, 0, .45); }
+.doc header { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid rgba(238, 244, 250, .15); padding-bottom: .8em; }
+.doc header span { font-family: var(--mono); font-size: .72em; letter-spacing: .14em; text-transform: uppercase; color: var(--green); }
+.doc header b { font-family: var(--serif); font-weight: 400; font-size: 2em; }
+.doc .kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: .8em; margin: 1.1em 0 1.2em; }
+.doc .kpis > div { padding: .8em .9em; border-radius: 12px; background: rgba(238, 244, 250, .05); border: 1px solid rgba(238, 244, 250, .1); }
+.doc .kpis p { display: flex; align-items: baseline; gap: .35em; }
+.doc .kpis s { color: var(--faint); font-size: 1.1em; }
+.doc .kpis b { font-family: var(--serif); font-weight: 400; font-size: 2.4em; line-height: 1; color: var(--green); }
+.doc .kpis small { display: block; margin-top: .35em; font-size: .78em; color: var(--mute); line-height: 1.35; }
+.doc .zero { padding: .75em 1em; border: 1.5px dashed rgba(238, 244, 250, .35); border-radius: 12px; color: var(--mute); line-height: 1.45; }
+.doc .zero b { color: var(--snow); }
+.doc i { font-style: normal; font-family: var(--mono); font-size: .72em; color: #a5b4fc; letter-spacing: .04em; white-space: nowrap; }
+.acts { list-style: none; margin-top: .8em; }
+.acts li { display: grid; grid-template-columns: 5.2em 1fr auto; align-items: center; gap: 1em; padding: .8em 0; border-bottom: 1px solid rgba(238, 244, 250, .1); }
+.acts .when { font-family: var(--mono); font-size: .75em; color: var(--faint); letter-spacing: .06em; }
+.acts b { display: block; font-size: 1.05em; }
+.acts em { font-style: normal; font-family: var(--serif); font-size: 1.9em; color: var(--green); }
+.doc footer { margin-top: 1em; font-family: var(--mono); font-size: .62em; color: var(--faint); letter-spacing: .04em; line-height: 1.5; }

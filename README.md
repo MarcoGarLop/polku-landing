@@ -4,6 +4,8 @@
 
 Team **FdiProtocol** · Junction 2026 · AstraZeneca challenge "Equal Care Across Finland" · Built with Gemini.
 
+**Live app:** https://web-gamma-beryl-747wo4r3t4.vercel.app
+
 ## Run it
 ```bash
 npm start            # → http://localhost:4180
@@ -22,7 +24,7 @@ You can also open `index.html` straight from disk. Everything is local: no netwo
 
 The whole page is driven by one virtual scroll position, moved by a critically damped spring. Every scene has its own steps: numbers count, bars fill and text appears as you move.
 
-## 11 scenes
+## 12 scenes
 1. **Polku**: Same cancer. Same chance?
 2. **Two patients**: Patient A, near Oulu, 94 days; Patient B, rural Lapland, 225 days (+131).
 3. **The Nordics**: Finland 154 · Sweden 107 · Denmark 67 days.
@@ -31,9 +33,10 @@ The whole page is driven by one virtual scroll position, moved by a critically d
 6. **Why**: distance alone adds 26 days.
 7. **How Polku works**: the patient, actions in the region, your own idea, learn from the Nordics.
 8. **The AI reasons, it never invents a number**: reads, estimates, simulates, cites.
-9. **Result**: 225 → 187 → 178 → 169 days.
-10. **Data and transparency**: sources, public aggregated data, not a medical device.
-11. **Same cancer. Same chance.**
+9. **Result**: 225 → 187 → 178 → 169 days (−57).
+10. **A one-page plan for Lapland**: step 0 plus three roadmap actions, each with a timeline and an expected effect.
+11. **Data and transparency**: sources, public aggregated data, not a medical device.
+12. **Same cancer. Same chance.** Links to the live app.
 
 ## Where everything comes from
 - **Figures**: `data/numbers.js`, frozen from Polku's simulation engine. The remaining figures match the live app and the demo video. Sources are on scene 10. None of them come from the AI.
