@@ -55,9 +55,10 @@
   const days = (window.POLKU_NUMBERS && window.POLKU_NUMBERS.regionDays) || {};
   const ramp = (v) => {
     const t = clamp((v - 135) / 41);
-    const stops = [[45, 212, 191], [251, 191, 36], [251, 113, 133]];
-    const i = t < 0.5 ? 0 : 1, f = t < 0.5 ? t * 2 : (t - 0.5) * 2;
-    const c = stops[i].map((a, k) => Math.round(a + (stops[i + 1][k] - a) * f));
+    // stronger contrast: teal → yellow → orange → deep rose
+    const stops = [[20, 184, 166], [253, 224, 71], [249, 115, 22], [225, 29, 72]];
+    const seg = Math.min(2, Math.floor(t * 3)), f = t * 3 - seg;
+    const c = stops[seg].map((a, k) => Math.round(a + (stops[seg + 1][k] - a) * f));
     return `rgb(${c.join(',')})`;
   };
   const vb = (GEO && GEO.viewBox) || [0, 0, 1000, 1746];
