@@ -1,0 +1,13 @@
+{
+  "name": "polku-landing",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Polku — Same cancer. Same chance? Scroll-driven landing and slide deck (Junction 2026, team FdiProtocol).",
+  "type": "module",
+  "scripts": {
+    "start": "node serve.mjs"
+  },
+  "devDependencies": {
+    "@google/genai": "2.31.0"
+  }
+}

@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Polku · Same cancer. Same chance?</title>
+  <meta name="description" content="Polku is an AI-powered simulator of the lung cancer pathway in every wellbeing county of Finland." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Background scenes (built by main.js from each scene's data-bg) -->
+  <div id="bgs" aria-hidden="true"></div>
+  <div class="shade" aria-hidden="true"></div>
+  <canvas id="snow" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+
+  <main id="scenes">
+
+    <!-- 1 · HERO ------------------------------------------------------------ -->
+    <section class="scene s-hero" data-bg="s0-hero" data-steps="1" data-region="lappi" data-place="patientB" data-where="Lapland · polar night" data-fi="kaamos" data-en="the polar night">
+      <div class="inner">
+        <p class="kicker par" style="--depth:.6">FdiProtocol · Junction 2026 · AstraZeneca — Equal Care Across Finland</p>
+        <h1 class="logo par" style="--depth:1.25"><span class="lungs" aria-hidden="true"></span>Polku</h1>
+        <h2 class="display par" style="--depth:1"><em>Same cancer.</em><br />Same chance?</h2>
+        <p class="lede par" style="--depth:.8">An AI-powered simulator of the lung cancer pathway, in every wellbeing county of Finland.</p>
+      </div>
+    </section>
+
+    <!-- 2 · TWO PATIENTS ----------------------------------------------------- -->
+    <section class="scene s-two" data-bg="s1-oulu|s2-house" data-steps="3" data-region="pohjois-pohjanmaa,lappi" data-place="oulu,patientB" data-where="Oulu · rural Lapland" data-fi="sama syöpä" data-en="the same cancer">
+      <div class="inner">
+        <div class="center par">
+          <p class="kicker">AstraZeneca's question</p>
+          <h2 class="display">Two people in Finland.<br /><em>The same lung cancer.</em></h2>
+        </div>
+        <div class="pair">
+          <article class="pcard a frag" data-step="1">
+            <p class="tag">Patient A · works near Oulu</p>
+            <ul class="facts"><li>Work health care</li><li>8 km from hospital</li><li>Secondary education</li><li>Has support</li></ul>
+            <p class="num"><b data-count="94" data-step="1">94</b><span>days from first symptom to treatment</span></p>
+          </article>
+          <article class="pcard b frag" data-step="2">
+            <p class="tag">Patient B · retired, rural Lapland</p>
+            <ul class="facts"><li>Public health centre</li><li>180 km from hospital</li><li>Basic education</li><li>Lives alone</li></ul>
+            <p class="num"><b data-count="225" data-step="2">225</b><span>days from first symptom to treatment</span></p>
+          </article>
+        </div>
+        <p class="gapline frag" data-step="2"><b class="rose">+131 days.</b> More than four months longer, for the same disease.</p>
+        <p class="src">Polku simulation of synthetic patients · public, aggregated data</p>
+      </div>
+    </section>
+
+    <!-- 3 · NORDICS ---------------------------------------------------------- -->
+    <section class="scene s-nordic" data-bg="s3-kvarken" data-steps="2" data-region="pohjanmaa" data-place="" data-where="Kvarken · between Finland and Sweden" data-fi="naapurit" data-en="the neighbours">
+      <div class="inner left">
+        <p class="kicker par" style="--depth:.6">Symptom to treatment, lung cancer</p>
+        <h2 class="display par">Finland is the slow one<br /><em>in the Nordics.</em></h2>
+        <div class="hbars par" style="--depth:.85">
+          <div class="hbar" style="--v:67"><span class="lab">Denmark</span><i></i><b data-count="67" data-step="0">67</b><small>days</small></div>
+          <div class="hbar" style="--v:107"><span class="lab">Sweden</span><i></i><b data-count="107" data-step="0">107</b><small>days</small></div>
+          <div class="hbar fi" style="--v:154"><span class="lab">Finland</span><i></i><b data-count="154" data-step="0">154</b><small>days</small></div>
+        </div>
+        <p class="note frag" data-step="1">Across this strait, Swedish patients start treatment <b class="cyan">about seven weeks sooner.</b></p>
+        <p class="src">Kuittinen et al., preliminary results (Yle MOT, 2025)</p>
+      </div>
+    </section>
+
+    <!-- 4 · MAP -------------------------------------------------------------- -->
+    <section class="scene s-map" data-bg="night" data-steps="2" data-region="" data-place="" data-where="22 wellbeing counties" data-fi="hyvinvointialue" data-en="wellbeing services county">
+      <div class="inner split">
+        <div class="col par" style="--depth:.8">
+          <p class="kicker">Every county, simulated</p>
+          <h2 class="display">Where you live<br /><em>changes the wait.</em></h2>
+          <p class="lede">For the average patient, from <b class="green">135 days</b> in Päijät-Häme to <b class="rose">176</b> in North Karelia.</p>
+          <p class="lede frag" data-step="1">But the widest gap is between <em>people</em>: up to <b>41 days</b> between counties, <b class="rose">131 days</b> between Patient A and Patient B.</p>
+          <div class="legend"><span>135</span><i></i><span>176 days</span></div>
+          <p class="src">Polku model estimate · Statistics Finland 2026 boundaries</p>
+        </div>
+        <div class="bigmap par" style="--depth:.5"><svg id="bigmap" aria-label="Map of Finland's wellbeing counties coloured by days to treatment"></svg></div>
+      </div>
+    </section>
+
+    <!-- 5 · WHERE ------------------------------------------------------------ -->
+    <section class="scene s-where" data-bg="s4-clinic" data-steps="2" data-region="lappi" data-place="patientB" data-where="A village health centre · Lapland" data-fi="terveyskeskus" data-en="health centre">
+      <div class="inner left">
+        <p class="kicker par" style="--depth:.6"><span class="n">1</span> Where the days are lost</p>
+        <h2 class="display par"><b class="rose">64%</b> of Patient B's extra days<br /><em>are lost before a specialist ever sees them.</em></h2>
+        <div class="stretch par" style="--depth:.85">
+          <div class="srow"><span class="who">Patient B</span>
+            <div class="segs"><i class="d" style="--v:96.4">96</i><i class="r" style="--v:45.2">45</i><i class="h" style="--v:83.9">84</i></div></div>
+          <div class="srow avg"><span class="who">Finland avg</span>
+            <div class="segs"><i class="d" style="--v:55">55</i><i class="r" style="--v:41">41</i><i class="h" style="--v:58">58</i></div></div>
+          <div class="skey"><span class="d">Detection <small>first symptom → first doctor</small></span><span class="r">Referral <small>primary care → referral sent</small></span><span class="h">Hospital <small>specialist, diagnosis, first treatment</small></span></div>
+        </div>
+        <p class="note frag" data-step="1">It is not biology. It is <b class="amber">access</b>: getting seen, and getting referred.</p>
+      </div>
+    </section>
+
+    <!-- 6 · WHY -------------------------------------------------------------- -->
+    <section class="scene s-why" data-bg="s5-road" data-steps="2" data-region="lappi" data-place="patientB" data-where="180 km to hospital · Lapland" data-fi="matka" data-en="the journey">
+      <div class="inner left">
+        <p class="kicker par" style="--depth:.6"><span class="n">2</span> Why: how the days add up</p>
+        <h2 class="display par">Distance alone adds <b class="rose">26 days.</b></h2>
+        <div class="water par" style="--depth:.85">
+          <div class="wrow base"><span>Finland's average patient</span><i style="--a:0;--b:154"></i><b>154</b></div>
+          <div class="wrow frag" data-step="1" data-seq="0,5"><span>Lives in Lapland</span><i style="--a:154;--b:157"></i><b>+3</b></div>
+          <div class="wrow frag hot" data-step="1" data-seq="1,5"><span>180 km from hospital</span><i style="--a:157;--b:182"></i><b>+26</b></div>
+          <div class="wrow frag" data-step="1" data-seq="2,5"><span>Goes to the public health centre</span><i style="--a:182;--b:202"></i><b>+19</b></div>
+          <div class="wrow frag" data-step="1" data-seq="3,5"><span>Basic education</span><i style="--a:202;--b:215"></i><b>+13</b></div>
+          <div class="wrow frag" data-step="1" data-seq="4,5"><span>Lives alone</span><i style="--a:215;--b:225"></i><b>+11</b></div>
+          <div class="wrow total frag" data-step="1" data-seq="4,5"><span>Patient B</span><i style="--a:0;--b:225"></i><b>225</b></div>
+        </div>
+        <p class="src">Start from Finland&rsquo;s average patient, add each factor in turn · scale starts at 120 days · Polku simulation</p>
+      </div>
+    </section>
+
+    <!-- 7 · HOW (product) ---------------------------------------------------- -->
+    <section class="scene s-how" data-bg="s6-aurora" data-steps="4" data-region="" data-place="" data-where="Northern lights · Lapland" data-fi="polku" data-en="a path">
+      <div class="inner split how">
+        <div class="col par" style="--depth:.8">
+          <p class="kicker">How Polku works</p>
+          <h2 class="display sm">A digital twin of the pathway,<br /><em>for the people who plan care.</em></h2>
+          <ol class="steps">
+            <li data-on="0"><b>The patient</b><span>Where they live, how far from hospital, how they enter care, education, support. Every choice re-runs the simulation.</span></li>
+            <li data-on="1"><b>Actions in the region</b><span>The AI estimated every action in Finland's national cancer roadmap from the evidence, and recommends the best mix.</span></li>
+            <li data-on="2"><b>Your own idea</b><span>Planners describe an idea in plain words. The AI matches it to the roadmap and estimates its effect, with a confidence level.</span></li>
+            <li data-on="3"><b>Learn from the Nordics</b><span>What Norway, Sweden and Denmark's fast pathways achieved, and what they would mean here.</span></li>
+          </ol>
+        </div>
+        <div class="shots par" style="--depth:.55">
+          <img src="media/app-1.jpg" data-on="0" alt="Polku: the patient and the result panel" />
+          <img src="media/app-2.jpg" data-on="1" alt="Polku: actions in the region" />
+          <img src="media/app-3.jpg" data-on="2" alt="Polku: your own idea" />
+          <img src="media/app-4.jpg" data-on="3" alt="Polku: learn from the Nordics" />
+        </div>
+      </div>
+    </section>
+
+    <!-- 8 · AI --------------------------------------------------------------- -->
+    <section class="scene s-ai" data-bg="s6-aurora" data-steps="2" data-region="" data-place="" data-where="Northern lights · Lapland" data-fi="tekoäly" data-en="artificial intelligence">
+      <div class="inner">
+        <div class="center par">
+          <p class="kicker">Built with Gemini</p>
+          <h2 class="display">The AI reasons.<br /><em>It never invents a number.</em></h2>
+        </div>
+        <div class="quad par" style="--depth:.7">
+          <div class="frag" data-step="1" data-seq="0,4"><span class="ix">01</span><b>Reads</b><p>Finland's full national cancer strategy and roadmap, in long context.</p></div>
+          <div class="frag" data-step="1" data-seq="1,4"><span class="ix">02</span><b>Estimates</b><p>Each action's effect from the evidence, with a range and a confidence level.</p></div>
+          <div class="frag" data-step="1" data-seq="2,4"><span class="ix">03</span><b>Simulates</b><p>Polku's engine turns effects into days and tests 512 combinations of actions per county.</p></div>
+          <div class="frag" data-step="1" data-seq="3,4"><span class="ix">04</span><b>Cites</b><p>Every figure links to its source: the roadmap action, its page, the study.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9 · RESULT ----------------------------------------------------------- -->
+    <section class="scene s-result" data-bg="s7-dawn" data-steps="4" data-region="lappi" data-place="patientB" data-where="Sunrise over a fell · Lapland" data-fi="aamunkoitto" data-en="dawn">
+      <div class="inner left">
+        <p class="kicker par" style="--depth:.6">Patient B, Lapland · days from first symptom to treatment</p>
+        <p class="giant par" style="--depth:1.15"><b data-track="225,187,178,169">225</b><span>days</span></p>
+        <div class="meter par" style="--depth:.9"><i data-trackw="225,187,178,169"></i><em style="--v:94" title="Patient A"></em></div>
+        <ul class="ladder par" style="--depth:.8">
+          <li class="frag" data-step="1"><b class="green">−39</b><span><b>The AI's recommendation for Lapland</b> · nurse navigator, symptom-awareness campaign, travel support (national roadmap 1.2, 1.3, 3.3)</span></li>
+          <li class="frag" data-step="2"><b class="green">−48</b><span><b>+ a planner's own idea</b> · volunteer drivers and a named contact person</span></li>
+          <li class="frag" data-step="3"><b class="green">169</b><span><b>+ Norway's standardised cancer pathways</b> · almost two months sooner. The gap to Patient A shrinks from 131 to 82 days.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 10 · TRUST ----------------------------------------------------------- -->
+    <section class="scene s-trust" data-bg="s3-kvarken" data-steps="1" data-region="" data-place="" data-where="Sea ice · Kvarken" data-fi="läpinäkyvyys" data-en="transparency">
+      <div class="inner left">
+        <p class="kicker par" style="--depth:.6">Data &amp; transparency</p>
+        <h2 class="display par">Every number has<br /><em>a source and a confidence level.</em></h2>
+        <ul class="trust par" style="--depth:.8">
+          <li><b>Waiting times</b><span>Kuittinen et al., preliminary (Yle MOT 2025): Finland 154 · Sweden 107 · Denmark 67 days</span></li>
+          <li><b>Entry route</b><span>AstraZeneca pathway data (lymphoma, Finland): 123 days via work health care vs 207 via the public route</span></li>
+          <li><b>Distance</b><span>Living over 50 km from hospital is linked to higher lung cancer mortality (Vaasa study, HR 1.47)</span></li>
+          <li><b>Actions</b><span>Effects estimated by Gemini from the national roadmap and the evidence, shown with range and confidence</span></li>
+        </ul>
+        <div class="chips par" style="--depth:.7"><span>Public, aggregated data only</span><span>Synthetic patients, labelled</span><span>Decision support for planners, not a medical device</span><span>Scenes are AI-generated. Data never is.</span></div>
+      </div>
+    </section>
+
+    <!-- 11 · CLOSE ----------------------------------------------------------- -->
+    <section class="scene s-close" data-bg="s0-hero" data-steps="1" data-region="lappi" data-place="patientB" data-where="Lapland · polar night" data-fi="sama mahdollisuus" data-en="the same chance">
+      <div class="inner">
+        <h2 class="display xl par" style="--depth:1.2">Same cancer.<br /><em>Same chance.</em></h2>
+        <p class="lede par" style="--depth:.85"><b>Polku</b> finds the gap, locates it in the pathway, and recommends what to do, in every wellbeing county of Finland.</p>
+        <p class="cta par" style="--depth:.7"><a href="http://localhost:5173" target="_blank" rel="noopener">Open the live demo →</a></p>
+        <p class="team par" style="--depth:.6"><span>Team</span> FdiProtocol <span>· Junction 2026 · Built with Gemini</span></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- HUD -->
+  <div id="hud" aria-hidden="true">
+    <div class="loc"><svg id="locator"></svg><div><b id="where"></b><small>Scene generated with Gemini</small></div></div>
+    <div class="word"><b id="fi"></b><small id="en"></small></div>
+    <div class="count"><b id="cur">01</b><span id="tot">/ 11</span></div>
+    <div class="trail"><i id="trailfill"></i></div>
+  </div>
+  <div id="hint">→ / ↓ / scroll to follow the path · F fullscreen</div>
+
+  <!-- Classic scripts so it also opens straight from disk: real geography and figures frozen from the Polku simulator. -->
+  <script src="data/numbers.js"></script>
+  <script src="data/geo.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
