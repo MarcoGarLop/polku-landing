@@ -4,7 +4,7 @@
 
 Team **FdiProtocol** · Junction 2026 · AstraZeneca challenge "Equal Care Across Finland" · Built with Gemini.
 
-**Live app:** https://web-gamma-beryl-747wo4r3t4.vercel.app
+**Demo video:** https://youtu.be/GxnFY8n3sAc · **Live landing:** https://polku-landing.vercel.app
 
 ## Run it
 ```bash
@@ -36,10 +36,10 @@ The whole page is driven by one virtual scroll position, moved by a critically d
 9. **Result**: 225 → 187 → 178 → 169 days (−57).
 10. **A one-page plan for Lapland**: step 0 plus three roadmap actions, each with a timeline and an expected effect.
 11. **Data and transparency**: sources, public aggregated data, not a medical device.
-12. **Same cancer. Same chance.** Links to the live app.
+12. **Same cancer. Same chance.** Links to the demo video.
 
 ## Where everything comes from
-- **Figures**: `data/numbers.js`, frozen from Polku's simulation engine. The remaining figures match the live app and the demo video. Sources are on scene 10. None of them come from the AI.
+- **Figures**: `data/numbers.js`, frozen from Polku's simulation engine. The remaining figures match the live app and the demo video. Sources are on scene 11. None of them come from the AI.
 - **Geography**: `data/geo.js`, the real wellbeing county boundaries (Statistics Finland 2026) and lakes (Natural Earth).
 - **Scenes**: generated with Gemini. They are atmosphere only and are labelled on screen.
   - Each still was made with Nano Banana Pro (`gemini-3-pro-image`, `tools/generate-image.mjs`).
