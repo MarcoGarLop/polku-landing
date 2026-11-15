@@ -226,6 +226,7 @@
 
   /* ---------------- input ---------------- */
   const hint = $('#hint');
+  if (/[?&]still\b/.test(location.search)) document.body.classList.add('still'); // still frames for the PDF: no key hint
   const go = (k) => { tgt = clamp(Math.round(k), 0, TOTAL - 1); hint.classList.add('gone'); };
   const sceneOf = (k) => S.reduce((acc, s, i) => (k >= s.start ? i : acc), 0);
   addEventListener('keydown', (e) => {

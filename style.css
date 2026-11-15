@@ -269,7 +269,11 @@ body.cursorless { cursor: none; }
 .doc footer { margin-top: 1em; font-family: var(--mono); font-size: .62em; color: var(--faint); letter-spacing: .04em; line-height: 1.5; }
 
 /* close: the challenge's three requirements */
-.reqs { display: flex; flex-wrap: wrap; justify-content: center; gap: .7em; margin-top: 2em; counter-reset: rq; }
-.reqs span { counter-increment: rq; display: flex; align-items: center; gap: .6em; padding: .6em 1.2em .6em .7em; border-radius: 99px; font-size: 1.05em; background: rgba(4, 7, 13, .55); backdrop-filter: blur(10px); border: 1px solid rgba(52, 211, 153, .4); }
-.reqs span::before { content: '✓'; display: grid; place-items: center; width: 1.6em; height: 1.6em; border-radius: 50%; background: var(--green); color: #04120c; font-weight: 700; font-size: .85em; }
-.s-close .lede { margin-top: 1em; }
+/* same language as the numbered kickers: thin outlined numerals, mono caps, hairline separators */
+.reqs { display: flex; justify-content: center; align-items: center; margin-top: 2.4em; counter-reset: rq; font-family: var(--mono); font-size: .82em; letter-spacing: .16em; text-transform: uppercase; color: var(--snow); }
+.reqs span { counter-increment: rq; display: flex; align-items: center; gap: .9em; padding: 0 1.8em; }
+.reqs span + span { border-left: 1px solid rgba(238, 244, 250, .22); }
+.reqs span::before { content: counter(rq); display: inline-grid; place-items: center; width: 1.9em; height: 1.9em; border-radius: 50%; border: 1px solid var(--faint); letter-spacing: 0; color: var(--mute); }
+.s-close .lede { margin-top: 1.4em; }
+
+.still #hint { display: none; }
